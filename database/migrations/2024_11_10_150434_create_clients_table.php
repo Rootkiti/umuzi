@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullabel();
+            $table->string('username')->unique()->nullable();
+            $table->string('email')->unique()->nullable();
+            $table->string('password')->nullable();
+            $table->string('picture')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phone')->unique()->nullable();
+            $table->string('email_verified_at')->nullable();
+            $table->enum('status',['Pending','Active'])->default('Pending');
             $table->timestamps();
         });
     }

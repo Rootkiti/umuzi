@@ -11,6 +11,7 @@ class Seller extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
+    protected $guard = "seller";
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +19,16 @@ class Seller extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        
+        'name',
+       'username',
+       'email',
+       'password',
+       'picture',
+       'address',
+       'phone',
+       'email_verified_at',
+       'status'
+    
     ];
 
     /**
